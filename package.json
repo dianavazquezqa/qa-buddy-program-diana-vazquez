@@ -1,0 +1,14 @@
+{
+  "name": "onboarding-challenge",
+  "version": "1.0.0",
+  "description": "This project is created to cover the QA onboarding challenge",
+  "main": "index.js",
+  "scripts": {
+    "test-all-chrome": "testcafe chrome ./page_model/tests"
+  },
+  "author": "Diana Vázquez",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^9.0.0"
+  }
+}
