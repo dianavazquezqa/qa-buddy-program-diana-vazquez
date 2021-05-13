@@ -15,19 +15,19 @@ test('User login with valid credentials', async t => {
 })
 
 test('User can\'t login with invalid password', async t => {
-    await LoginPage.submitLoginWithInvalidPassword(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.INVALID_USER.PASSWORD)
+    await LoginPage.submitLoginForm(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.INVALID_USER.PASSWORD)
     await t.expect(LoginPage.ErrorMessage.exists).ok()
     await t.expect(LoginPage.ErrorMessage.innerText).eql(ERROR_MESSAGE.INVALID_PASSWORD_ERROR_MSG)
 })
 
-test('User can\'t login leaving blank fields', async t => {
-    await LoginPage.submitLoginFormWithEmptyFields()
+test.only('User can\'t login leaving blank fields', async t => {
+    await LoginPage.submitLoginFormEmptyFields()
     await t.expect(LoginPage.ErrorMessage.exists).ok()
     await t.expect(LoginPage.ErrorMessage.innerText).eql(ERROR_MESSAGE.BLANK_FIELDS_ERROR_MSG)
 })
 
-test('User can\'t login leaving password field empty', async t => {
-    await LoginPage.submitLoginFormWithEmptyPwd(CREDENTIALS.VALID_USER.USERNAME)
+test.only('User can\'t login leaving password field empty', async t => {
+    await LoginPage.submitLoginFormEmptyPwd(CREDENTIALS.VALID_USER.USERNAME)
     await t.expect(LoginPage.ErrorMessage.exists).ok()
     await t.expect(LoginPage.ErrorMessage.innerText).eql(ERROR_MESSAGE.BLANK_PASSWORD_ERROR_MSG)
 })

@@ -10,8 +10,12 @@ export const CREDENTIALS = {
         PASSWORD: process.env.PASSWORD
     },
     INVALID_USER:{
-        USERNAME: process.env.INVALID_USER,
-        PASSWORD: process.env.INVALID_PASSWORD
+        USERNAME: "invalid_user",
+        PASSWORD: "invalid_password"
+    },
+    BLANK_USER:{
+        USERNAME: " ",
+        PASSWORD: ""
     }
 }
 
