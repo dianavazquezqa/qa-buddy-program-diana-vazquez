@@ -24,7 +24,6 @@ class LoginPage {
         .typeText(this.userNameField, username)
         .click(this.loginButton)
     }
-
 }
 
 export default new LoginPage()

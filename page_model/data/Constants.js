@@ -12,10 +12,6 @@ export const CREDENTIALS = {
     INVALID_USER:{
         USERNAME: "invalid_user",
         PASSWORD: "invalid_password"
-    },
-    BLANK_USER:{
-        USERNAME: " ",
-        PASSWORD: ""
     }
 }
 

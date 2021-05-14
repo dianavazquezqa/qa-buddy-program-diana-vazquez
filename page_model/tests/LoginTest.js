@@ -20,13 +20,13 @@ test('User can\'t login with invalid password', async t => {
     await t.expect(LoginPage.ErrorMessage.innerText).eql(ERROR_MESSAGE.INVALID_PASSWORD_ERROR_MSG)
 })
 
-test.only('User can\'t login leaving blank fields', async t => {
+test('User can\'t login leaving blank fields', async t => {
     await LoginPage.submitLoginFormEmptyFields()
     await t.expect(LoginPage.ErrorMessage.exists).ok()
     await t.expect(LoginPage.ErrorMessage.innerText).eql(ERROR_MESSAGE.BLANK_FIELDS_ERROR_MSG)
 })
 
-test.only('User can\'t login leaving password field empty', async t => {
+test('User can\'t login leaving password field empty', async t => {
     await LoginPage.submitLoginFormEmptyPwd(CREDENTIALS.VALID_USER.USERNAME)
     await t.expect(LoginPage.ErrorMessage.exists).ok()
     await t.expect(LoginPage.ErrorMessage.innerText).eql(ERROR_MESSAGE.BLANK_PASSWORD_ERROR_MSG)
