@@ -132,5 +132,7 @@ temp/
 /out/
 /newman/
 /.temp/
+/reports
 
 # End of https://www.toptal.com/developers/gitignore/api/node.DS_Store
+.DS_Store
