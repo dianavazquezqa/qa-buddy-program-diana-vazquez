@@ -59,3 +59,9 @@ PASSWORD=[Todoist Password]
 ```bash
  npm install -g newman
  ```
+
+6. Install newman
+
+```bash
+ npm install -g newman-reporter-htmlextra
+ ```

@@ -6,7 +6,8 @@
   "scripts": {
     "test-all-chrome": "testcafe chrome ./Frontend/page_model/tests",
     "test-all-safari": "testcafe safari ./Frontend/page_model/tests",
-    "test-all-firefox": "testcafe firefox ./Frontend/page_model/tests"
+    "test-all-firefox": "testcafe firefox ./Frontend/page_model/tests",
+    "testAPI": "npx newman run './Backend/collection/Todoist.json' -e './Backend/envVariables/QA.json' -r htmlextra --reporter-htmlextra-export './Backend/reports/reporte.html'"
   },
   "author": "Diana Vázquez",
   "license": "ISC",

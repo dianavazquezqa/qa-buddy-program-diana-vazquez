@@ -1,0 +1,49 @@
+{
+	"id": "ce00cf9f-805a-4d5e-9b38-ad668fad07a9",
+	"name": "QA",
+	"values": [
+		{
+			"key": "baseURL",
+			"value": "https://api.todoist.com/rest/v1",
+			"enabled": true
+		},
+		{
+			"key": "projectURL",
+			"value": "https://api.todoist.com/rest/v1/projects",
+			"enabled": true
+		},
+		{
+			"key": "tasksURL",
+			"value": "https://api.todoist.com/rest/v1/tasks",
+			"enabled": true
+		},
+		{
+			"key": "token",
+			"value": "a46b21bdd4c1071510bd6fbf90f59d8c3153f08f",
+			"enabled": true
+		},
+		{
+			"key": "projectName",
+			"value": "Wizeline-Challenge",
+			"enabled": true
+		},
+		{
+			"key": "taskName",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "projectId",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "taskId",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-05-18T16:01:32.986Z",
+	"_postman_exported_using": "Postman/8.3.0"
+}

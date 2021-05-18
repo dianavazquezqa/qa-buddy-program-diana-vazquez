@@ -9,7 +9,7 @@ fixture('Login feature test')
         await t.click(WelcomePage.loginButton)
     })
 
-test.only('User login with valid credentials', async t => {
+test('User login with valid credentials', async t => {
     await LoginPage.submitLoginForm(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD)
     await t.expect(MyTasksPage.topBar.exists).ok()
 })

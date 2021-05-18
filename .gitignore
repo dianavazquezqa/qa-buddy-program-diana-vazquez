@@ -128,4 +128,9 @@ dist/
 tmp/
 temp/
 
+# - Prevent CI output files from being Added
+/out/
+/newman/
+/.temp/
+
 # End of https://www.toptal.com/developers/gitignore/api/node.DS_Store
