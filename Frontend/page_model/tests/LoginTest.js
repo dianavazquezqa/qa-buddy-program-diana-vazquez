@@ -9,25 +9,22 @@ fixture('Login feature test')
         await t.click(WelcomePage.loginButton)
     })
 
-test('User login with valid credentials', async t => {
+test.only('User login with valid credentials', async t => {
     await LoginPage.submitLoginForm(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD)
-    await t.expect(MyTasksPage.topBar.exists).ok()
+    await t.expect(MyTasksPage.calendarTitle.exists).ok({timeout:5000})
 })
 
 test('User can\'t login with invalid password', async t => {
     await LoginPage.submitLoginForm(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.INVALID_USER.PASSWORD)
-    await t.expect(LoginPage.ErrorMessage.exists).ok()
     await t.expect(LoginPage.ErrorMessage.innerText).eql(ERROR_MESSAGE.INVALID_PASSWORD_ERROR_MSG)
 })
 
 test('User can\'t login leaving blank fields', async t => {
-    await LoginPage.submitLoginFormEmptyFields()
-    await t.expect(LoginPage.ErrorMessage.exists).ok()
+    await LoginPage.submitLoginForm(null, null)
     await t.expect(LoginPage.ErrorMessage.innerText).eql(ERROR_MESSAGE.BLANK_FIELDS_ERROR_MSG)
 })
 
 test('User can\'t login leaving password field empty', async t => {
-    await LoginPage.submitLoginFormEmptyPwd(CREDENTIALS.VALID_USER.USERNAME)
-    await t.expect(LoginPage.ErrorMessage.exists).ok()
+    await LoginPage.submitLoginForm(CREDENTIALS.VALID_USER.USERNAME, null)
     await t.expect(LoginPage.ErrorMessage.innerText).eql(ERROR_MESSAGE.BLANK_PASSWORD_ERROR_MSG)
 })

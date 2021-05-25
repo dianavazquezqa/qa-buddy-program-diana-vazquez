@@ -3,6 +3,7 @@ import { Selector , t } from 'testcafe'
 class MyTasksPage {
     constructor(){
         this.topBar = Selector('#top_bar_inner')
+        this.calendarTitle = Selector('.view_header__content')
         this.addTaskIcon = Selector('.icon_add')
         this.taskNameInput = Selector('.public-DraftEditor-content')
         this.addTaskButton = Selector('.ist_button')

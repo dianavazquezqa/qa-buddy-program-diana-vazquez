@@ -127,6 +127,7 @@ dist/
 # Temporary folders
 tmp/
 temp/
+package-lock.json
 
 # - Prevent CI output files from being Added
 /out/

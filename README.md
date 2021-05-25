@@ -22,6 +22,8 @@ Follow below instructions to complete the prerequesites and stetup to be able to
 
 ##### Instructions
 
+###### Frontend
+
 1. In VS Code open a new terminal and clone the [repo](https://github.com/dianavazquezqa/qa-buddy-program-diana-vazquez) 
 
 ```bash
@@ -37,7 +39,7 @@ npm install
 3. Install Test Cafe Library
 
 ```bash
-npm install -g testcafe
+npm install testcafe
 ```
 
 4. Install Dotenv 
@@ -54,14 +56,16 @@ USERNAME=[Todoist User]
 PASSWORD=[Todoist Password]
 ```
 
-6. Install newman
+###### Backend
+
+1. Install newman
 
 ```bash
- npm install -g newman
+ npm install newman
  ```
 
-6. Install newman
+2. Install newman
 
 ```bash
- npm install -g newman-reporter-htmlextra
+ npm install newman-reporter-htmlextra
  ```

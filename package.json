@@ -12,6 +12,9 @@
   "author": "Diana Vázquez",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "9.0.0"
+    "dotenv": "^9.0.0"
+  },
+  "devDependencies": {
+    "testcafe": "^1.14.2"
   }
 }
