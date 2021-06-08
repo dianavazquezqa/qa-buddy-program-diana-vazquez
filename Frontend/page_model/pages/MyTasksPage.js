@@ -9,7 +9,7 @@ class MyTasksPage {
         this.addTaskButton = Selector('.ist_button')
         this.newTaskRadioBtn = Selector('.task_checkbox__circle')
         this.taskName = Selector('.task_content')
-        this.addTaskEmptyStateButton = Selector('.empty-state-button')
+        this.addTaskEmptyStateLabel = Selector('.empty-state-header')
         this.cancelButton = Selector('.cancel')
     }
 
@@ -22,10 +22,15 @@ class MyTasksPage {
     }
 
     async getTasksCount(){
-        if (await this.addTaskEmptyStateButton.exists && await this.addTaskEmptyStateButton.visible)
+        if (await this.addTaskEmptyStateLabel.exists && await this.addTaskEmptyStateLabel.visible)
             return 0
         await t.hover(this.newTaskRadioBtn)
         return this.newTaskRadioBtn.count
+    }
+
+    async getLastTaskName(){
+        const taskCount = await this.getTasksCount()
+        return this.taskName.nth(taskCount - 1).innerText
     }
 }
 

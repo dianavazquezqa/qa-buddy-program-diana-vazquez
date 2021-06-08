@@ -64,7 +64,7 @@ PASSWORD=[Todoist Password]
  npm install newman
  ```
 
-2. Install newman
+2. Install newman reporter
 
 ```bash
  npm install newman-reporter-htmlextra
