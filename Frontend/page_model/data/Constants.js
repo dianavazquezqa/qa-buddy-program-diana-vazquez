@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export const BASE_URL = process.env.BASE_URL
-export const TASK_NAME = `New Task ${Date.now()}`
+export const TASK_NAME = `New_Task_${Date.now()}`
 
 export const CREDENTIALS = {
     VALID_USER:{
