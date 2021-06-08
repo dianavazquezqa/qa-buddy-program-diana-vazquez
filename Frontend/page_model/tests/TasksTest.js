@@ -8,6 +8,7 @@ fixture('Add tasks feature test')
     .beforeEach(async t => {
         await t.click(WelcomePage.loginButton)
         await LoginPage.submitLoginForm(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD)
+
         await t.expect(MyTasksPage.calendarTitle.exists).ok({timeout:8000})
     })
 
@@ -15,17 +16,15 @@ test('Validate new task is created', async t => {
     const tasksCountBeforeCreate = await MyTasksPage.getTasksCount()
     await MyTasksPage.createNewTask(TASK_NAME)
     const tasksCountAfterCreate = await MyTasksPage.getTasksCount()
+
     await t.expect(tasksCountAfterCreate - tasksCountBeforeCreate).eql(1)
 })
 
-test.only('Validate tasks are created correctly', async t => {
+test('Validate tasks are created correctly', async t => {
     for(let i=0; i<10; i++){
-        const tasksCountBeforeCreate = await MyTasksPage.getTasksCount()
         await MyTasksPage.createNewTask(TASK_NAME)
-        const tasksCountAfterCreate = await MyTasksPage.getTasksCount()
         const newTaskName = await MyTasksPage.getLastTaskName()
-        await t
-            .expect(tasksCountAfterCreate - tasksCountBeforeCreate).eql(1)
-            .expect(newTaskName).eql(TASK_NAME)
+
+        await t.expect(newTaskName).contains(TASK_NAME)
     }
 })
