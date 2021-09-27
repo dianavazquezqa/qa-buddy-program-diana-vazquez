@@ -6,11 +6,11 @@ class MyTasksPage {
         this.calendarTitle = Selector('.view_header__content')
         this.addTaskIcon = Selector('.icon_add')
         this.taskNameInput = Selector('.public-DraftEditor-content')
-        this.addTaskButton = Selector('.ist_button')
+        this.addTaskButton = Selector('.reactist_button--primary')
         this.newTaskRadioBtn = Selector('.task_checkbox__circle')
         this.taskName = Selector('.task_content')
         this.addTaskEmptyStateLabel = Selector('.empty-state-header')
-        this.cancelButton = Selector('.cancel')
+        this.cancelButton = Selector('.reactist_button--secondary')
     }
 
     async createNewTask(taskName){
