@@ -69,3 +69,17 @@ PASSWORD=[Todoist Password]
 ```bash
  npm install newman-reporter-htmlextra
  ```
+
+ ###### Static Analysis
+
+ 1. Install eslint
+
+ ```bash
+ npm install eslint --save-dev
+ ```
+
+ 2. Eslint configuration
+
+```bash
+ yarn run eslint --init
+ ``` 
