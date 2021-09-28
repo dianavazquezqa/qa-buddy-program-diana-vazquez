@@ -81,5 +81,5 @@ PASSWORD=[Todoist Password]
  2. Eslint configuration
 
 ```bash
- yarn run eslint --init
+ npx eslint --init
  ``` 
