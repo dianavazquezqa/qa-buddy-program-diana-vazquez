@@ -83,3 +83,11 @@ PASSWORD=[Todoist Password]
 ```bash
  npx eslint --init
  ``` 
+
+ ###### BrowserStack
+
+ 1. Install browserstack
+
+ ```bash
+ npm i testcafe-browser-provider-browserstack
+ ```
