@@ -10,7 +10,8 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+
+  ubuntu:
     name: First Job
     runs-on: ubuntu-latest
     
@@ -25,4 +26,13 @@ jobs:
       with: 
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: env | sort
+    
+  windows:
+    runs-on: windows-latest
+    steps:
+    - run: env | sort
+  macOs:
+    runs-on: macos-latest
+    steps:
     - run: env | sort
