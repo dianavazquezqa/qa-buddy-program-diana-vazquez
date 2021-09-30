@@ -26,9 +26,17 @@ jobs:
             collection: Todoist.json
             environment: QA.json
   test-windows:
+    name: Run Tests in Windows 10 
     runs-on: windows-latest
     steps:
-    - run: env | sort
+      - name: Check repository
+        uses: actions/checkout@v1
+      - name: Install TestCafe BrowserStack
+        run: npm install testcafe-browser-provider-browserstack
+      - name: Run Windows 10 Chrome@94.0 test
+        uses: DevExpress/testcafe-action@latest
+        with:
+            args: "'browserstack:chrome@84.0:Windows 10' tests"
   test-macOs:
     runs-on: macos-latest
     steps:
