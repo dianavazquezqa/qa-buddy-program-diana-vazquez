@@ -14,25 +14,22 @@ env:
       BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
 
 jobs:
-  ubuntu:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-    steps:
-    - name: Step One
-      uses: actions/checkout@v2
-      with: 
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: env | sort
-    
-  windows:
+  newman:
+      name: Run Newman test
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@master
+        - name: Use newman
+          uses: matt-ball/newman-action@master
+          with:
+            collection: Todoist.json
+            environment: QA.json
+  test-windows:
     runs-on: windows-latest
     steps:
     - run: env | sort
-  macOs:
+  test-macOs:
     runs-on: macos-latest
     steps:
     - run: env | sort
