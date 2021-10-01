@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v1
       - name: Install TestCafe BrowserStack
         run: npm install testcafe-browser-provider-browserstack
-      - name: Run Windows 10 Chrome@94.0 test
+      - name: Run Windows 10 Chrome@94.0 tests
         uses: DevExpress/testcafe-action@latest
         with:
             args: "testcafe \"browserstack:Chrome@94.0:Windows 10\" ./Frontend/page_model/tests -e"
