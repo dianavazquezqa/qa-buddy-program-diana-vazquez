@@ -7,7 +7,7 @@
     "test-all-chrome": "testcafe chrome ./Frontend/page_model/tests",
     "test-all-safari": "testcafe safari ./Frontend/page_model/tests",
     "test-all-firefox": "testcafe firefox ./Frontend/page_model/tests",
-    "npm run test-all-chromebrowserstack": "testcafe \"browserstack:Chrome@94.0:Windows 10\" ./Frontend/page_model/tests -e",
+    "test-all-chromebrowserstack": "testcafe \"browserstack:Chrome@94.0:Windows 10\" ./Frontend/page_model/tests -e",
     "testAPI": "npx newman run './Backend/collection/Todoist.json' -e './Backend/envVariables/QA.json' -r htmlextra --reporter-htmlextra-export './Backend/reports/reporte.html'"
   },
   "author": "Diana Vázquez",
