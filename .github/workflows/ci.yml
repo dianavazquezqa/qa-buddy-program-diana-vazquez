@@ -19,9 +19,9 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout repository
-          uses: actions/checkout@main
+          uses: actions/checkout@master
         - name: Use newman
-          uses: matt-ball/newman-action@main
+          uses: matt-ball/newman-action@master
           with:
             collection: Todoist.json
             environment: QA.json
