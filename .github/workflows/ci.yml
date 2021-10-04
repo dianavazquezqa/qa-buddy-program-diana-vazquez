@@ -31,8 +31,8 @@ jobs:
     steps:
       - name: Check repository
         uses: actions/checkout@v1
-      - name: Dotenv Action
-        uses: falti/dotenv-action@v0.2.7
+      - name: Install Dotenv
+        run: npm install —dotenv-extended
       - name: Install TestCafe BrowserStack
         run: npm install testcafe-browser-provider-browserstack
       - name: Run Windows 10 Chrome@94.0 test
