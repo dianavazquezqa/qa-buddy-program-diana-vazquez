@@ -32,7 +32,7 @@ jobs:
       - name: Check repository
         uses: actions/checkout@v1
       - name: Install Dotenv
-        run: npm install —dotenv-extended
+        run: npm install dotenv
       - name: Install TestCafe BrowserStack
         run: npm install testcafe-browser-provider-browserstack
       - name: Run Windows 10 Chrome@94.0 test
