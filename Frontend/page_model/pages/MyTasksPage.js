@@ -11,10 +11,11 @@ class MyTasksPage {
         this.taskName = Selector('.task_content')
         this.addTaskEmptyStateLabel = Selector('.empty-state-header')
         this.cancelButton = Selector('.reactist_button--secondary')
+        this.timeZone = Selector('.timezone_link').withExactText(`Don't update settings`)
     }
 
     async createNewTask(taskName){
-        await t
+        await t      
           .click(this.addTaskIcon)
           .typeText(this.taskNameInput, taskName)
           .click(this.addTaskButton)

@@ -11,7 +11,8 @@ fixture('Login feature test')
 
 test('User login with valid credentials', async t => {
     await LoginPage.submitLoginForm(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD)
-    await t.expect(MyTasksPage.calendarTitle.exists).ok({timeout:5000})
+    await t.click(MyTasksPage.timeZone)
+    await t.expect(MyTasksPage.calendarTitle.exists).ok({timeout:8000})
 })
 
 test('User can\'t login with invalid password', async t => {
