@@ -32,6 +32,14 @@ jobs:
     name: Run Tests in Windows 10 
     runs-on: windows-latest
     steps:
+    
+      - name: Create env file
+        run: |
+          touch .env
+          echo API_ENDPOINT="https://xxx.execute-api.us-west-2.amazonaws.com" >> .env
+          echo API_KEY=${{ secrets.API_KEY }} >> .env
+          cat .env
+    
       - name: Check repository
         uses: actions/checkout@v1
       - name: Install TestCafe BrowserStack
