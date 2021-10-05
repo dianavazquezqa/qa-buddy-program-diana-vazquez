@@ -27,12 +27,15 @@ jobs:
       - run: npm install
       - run: npm run eslint
   newman:
+    if: always()
     needs: eslint  
     name: Run Newman test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@master
+      - name: Install newman
+        run: npm install newman
       - name: Install newman html reporter
         run: npm install newman-reporter-html
       - name: Use newman
@@ -42,6 +45,7 @@ jobs:
           environment: QA.json
       - run: npm run testAPI
   e2eTests:
+    if: always()
     needs: newman
     name: Run Frontend Tests
     runs-on: ubuntu-latest
