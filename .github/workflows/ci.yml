@@ -17,17 +17,6 @@ env:
       PASSWORD: ${{ secrets.PASSWORD }}
       
 jobs:
-  dotenv:
-      name: Dotenv
-      runs-on: ubuntu-latest
-      steps:
-        - name: Create env file
-            run: |
-              touch .env
-              echo API_ENDPOINT="https://xxx.execute-api.us-west-2.amazonaws.com" > .env
-              echo API_KEY=${{ secrets.API_KEY }} > .env
-              cat .env
-
   newman:
       name: Run Newman test
       runs-on: ubuntu-latest
@@ -45,6 +34,12 @@ jobs:
     steps:
       - name: Check repository
         uses: actions/checkout@v1
+      - name: Create env file
+        run: |
+          touch .env
+          echo API_ENDPOINT="https://xxx.execute-api.us-west-2.amazonaws.com" >> .env
+          echo API_KEY=${{ secrets.API_KEY }} >> .env
+          cat .env
       - name: Install TestCafe BrowserStack
         run: npm install testcafe-browser-provider-browserstack
       - name: Run Windows 10 Chrome@94.0 test
