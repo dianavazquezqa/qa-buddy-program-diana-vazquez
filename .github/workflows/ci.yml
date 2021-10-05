@@ -17,17 +17,30 @@ env:
       PASSWORD: ${{ secrets.PASSWORD }}
       
 jobs:
+  eslint:
+    name: Run eslint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Set up node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - run: npm install
+      - run: npm run eslint
   newman:
-      name: Run Newman test
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@master
-        - name: Use newman
-          uses: matt-ball/newman-action@master
-          with:
-            collection: Todoist.json
-            environment: QA.json
+    needs: eslint  
+    name: Run Newman test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+      - name: Use newman
+        uses: matt-ball/newman-action@master
+        with:
+          collection: Todoist.json
+          environment: QA.json
   e2eTests:
     needs: newman
     name: Run Frontend Tests
