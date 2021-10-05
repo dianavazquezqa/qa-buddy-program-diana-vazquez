@@ -10,7 +10,7 @@ fixture('Add tasks feature test')
         await LoginPage.submitLoginForm(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD)
 
         await t.click(MyTasksPage.timeZone)
-        await t.expect(MyTasksPage.calendarTitle.exists).ok({timeout:8000})
+        await t.expect(MyTasksPage.calendarTitle.exists).ok()
     })
 
 test('Validate new task is created', async t => {
