@@ -25,9 +25,9 @@ jobs:
           with:
             collection: Todoist.json
             environment: QA.json
-  test-windows:
-    name: Run Tests in Windows 10 
-    runs-on: windows-latest
+  e2eTests:
+    name: Run Frontend Tests
+    runs-on: ubuntu-latest
     steps:
       - name: Check repository
         uses: actions/checkout@v1
