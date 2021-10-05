@@ -5,29 +5,47 @@
 ### Top level directory
 
 ```bash
-    . 
-    ├── .github
-    ├── Backend
-    ├── Frontend
-    ├── node_modules
-    ├── .env
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+. 
+├── .github
+├── Backend
+├── Frontend
+├── node_modules
+├── .env
+├── package-lock.json
+├── package.json
+└── README.md
  ```
 
 ### Backend Tests
 
 ```bash
-    . 
-    ├── ...
-    ├── Backend
-    │   ├── collection
-    │   │   └── Todoist.json
-    │   ├── envVariables
-    │   │   └── QA.json
-    │   └── reports
-    └── ...
+. 
+├── ...
+├── Frontend
+│   ├── collection
+│   │   └── Todoist.json
+│   ├── envVariables
+│   │   └── QA.json
+│   └── reports
+└── ...
+ ```
+ 
+ ### Frontend Tests
+
+```bash
+. 
+├── ...
+├── Backend
+│   ├── data
+│   │   └── Constants.js
+│   ├── pages
+│   │   ├── LoginPage.js
+│   │   ├── MyTasksPage.js
+│   │   └── WelcomePage.js
+│   └── tests
+│       ├── LoginTest.js
+│       └── TasksTest.js
+└── ...
  ```
 
 ## Todoist automation framework for QA Onboarding Challenge
