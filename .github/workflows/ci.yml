@@ -12,9 +12,6 @@ on:
 env:
       BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
       BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-      BASE_URL: ${{ secrets.BASE_URL }}
-      USERNAME: ${{ secrets.USERNAME }}
-      PASSWORD: ${{ secrets.PASSWORD }}
       
 jobs:
   eslint:
@@ -36,6 +33,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@master
+      - name: Install newman html reporter
+        run: npm install newman-reporter-html
       - name: Use newman
         uses: matt-ball/newman-action@master
         with:
