@@ -8,13 +8,26 @@
     . 
     ├── .github
     ├── Backend
-    ├── description
     ├── Frontend
     ├── node_modules
     ├── .env
-    └── package-lock.json
-    └── package.json
+    ├── package-lock.json
+    ├── package.json
     └── README.md
+ ```
+
+### Backend Tests
+
+```bash
+    . 
+    ├── ...
+    ├── Backend
+    │   ├── collection
+    │   │   └── Todoist.json
+    │   ├── envVariables
+    │   │   └── QA.json
+    │   └── reports
+    └── ...
  ```
 
 ## Todoist automation framework for QA Onboarding Challenge
