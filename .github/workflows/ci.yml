@@ -29,6 +29,7 @@ jobs:
             collection: Todoist.json
             environment: QA.json
   e2eTests:
+    needs: newman
     name: Run Frontend Tests
     runs-on: ubuntu-latest
     steps:
@@ -37,8 +38,8 @@ jobs:
       - name: Create env file
         run: |
           touch .env
-          echo API_ENDPOINT="https://xxx.execute-api.us-west-2.amazonaws.com" >> .env
-          echo API_KEY=${{ secrets.API_KEY }} >> .env
+          echo API_ENDPOINT="https://xxx.execute-api.us-west-2.amazonaws.com" > .env
+          echo API_KEY=${{ secrets.BASE_URL }} > .env
           cat .env
       - name: Install TestCafe BrowserStack
         run: npm install testcafe-browser-provider-browserstack
