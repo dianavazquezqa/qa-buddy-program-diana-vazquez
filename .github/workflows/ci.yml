@@ -41,6 +41,7 @@ jobs:
         with:
           collection: Todoist.json
           environment: QA.json
+      - run: npm run testAPI
   e2eTests:
     needs: newman
     name: Run Frontend Tests
