@@ -1,5 +1,53 @@
 # QA Buddy Program - Diana Vázquez
 
+## Folder Structure Conventions
+
+### Top level directory
+
+```bash
+. 
+├── .github
+├── Backend
+├── Frontend
+├── node_modules
+├── .env
+├── package-lock.json
+├── package.json
+└── README.md
+ ```
+
+### Backend Tests
+
+```bash
+. 
+├── ...
+├── Frontend
+│   ├── collection
+│   │   └── Todoist.json
+│   ├── envVariables
+│   │   └── QA.json
+│   └── reports
+└── ...
+ ```
+ 
+ ### Frontend Tests
+
+```bash
+. 
+├── ...
+├── Backend
+│   ├── data
+│   │   └── Constants.js
+│   ├── pages
+│   │   ├── LoginPage.js
+│   │   ├── MyTasksPage.js
+│   │   └── WelcomePage.js
+│   └── tests
+│       ├── LoginTest.js
+│       └── TasksTest.js
+└── ...
+ ```
+
 ## Todoist automation framework for QA Onboarding Challenge
 
 This repository is meant to covered the checklist from the Onboarding QA Challenge and deliver a test automation solution for front-end, back-end, and performance testing with JS.
