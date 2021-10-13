@@ -11,6 +11,7 @@ fixture('Add tasks feature test')
 
     await t.click(MyTasksPage.timeZone)
     await t.expect(MyTasksPage.calendarTitle.exists).ok()
+    await MyTasksPage.completeTasks()
   })
 
 test('Validate new task is created', async t => {

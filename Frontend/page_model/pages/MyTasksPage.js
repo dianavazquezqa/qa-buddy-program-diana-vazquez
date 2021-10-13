@@ -14,6 +14,13 @@ class MyTasksPage {
     this.timeZone = Selector('.timezone_link').withExactText('Don\'t update settings')
   }
 
+  async completeTasks () {
+    const taskCount = await this.getTasksCount()
+    for (let i = 0; i < taskCount; i++) {
+      await t.click(this.newTaskRadioBtn)
+    }
+  }
+
   async createNewTask (taskName) {
     await t
       .click(this.addTaskIcon)
