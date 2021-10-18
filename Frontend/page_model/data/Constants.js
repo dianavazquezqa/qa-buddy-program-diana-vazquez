@@ -3,6 +3,8 @@ dotenv.config()
 
 export const BASE_URL = process.env.BASE_URL
 export const TASK_NAME = `New_Task_${Date.now()}`
+export const TASKS_NUMBER_MIN = 1
+export const TASKS_NUMBER_MAX = 10
 
 export const CREDENTIALS = {
   VALID_USER: {

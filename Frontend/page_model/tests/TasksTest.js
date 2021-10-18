@@ -1,7 +1,7 @@
 import WelcomePage from '../pages/WelcomePage'
 import LoginPage from '../pages/LoginPage'
 import MyTasksPage from '../pages/MyTasksPage'
-import { CREDENTIALS, BASE_URL, TASK_NAME } from '../data/Constants'
+import { CREDENTIALS, BASE_URL, TASK_NAME, TASKS_NUMBER_MIN, TASKS_NUMBER_MAX } from '../data/Constants'
 
 fixture('Add tasks feature test')
   .page(BASE_URL)
@@ -16,17 +16,16 @@ fixture('Add tasks feature test')
 
 test('Validate new task is created', async t => {
   const tasksCountBeforeCreate = await MyTasksPage.getTasksCount()
-  await MyTasksPage.createNewTask(TASK_NAME)
+  await MyTasksPage.createNewTask(TASK_NAME, TASKS_NUMBER_MIN)
   const tasksCountAfterCreate = await MyTasksPage.getTasksCount()
 
   await t.expect(tasksCountAfterCreate - tasksCountBeforeCreate).eql(1)
 })
 
-test('Validate tasks are created correctly', async t => {
-  for (let i = 0; i < 10; i++) {
-    await MyTasksPage.createNewTask(TASK_NAME)
-    const newTaskName = await MyTasksPage.getLastTaskName()
+test.only('Validate tasks are created correctly', async t => {
+  const tasksCountBeforeCreate = await MyTasksPage.getTasksCount()
+  await MyTasksPage.createNewTask(TASK_NAME, TASKS_NUMBER_MAX)
+  const tasksCountAfterCreate = await MyTasksPage.getTasksCount()
 
-    await t.expect(newTaskName).contains(TASK_NAME)
-  }
+  await t.expect(tasksCountAfterCreate - tasksCountBeforeCreate).eql(TASKS_NUMBER_MAX)
 })

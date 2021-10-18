@@ -2,7 +2,6 @@ import { Selector, t } from 'testcafe'
 
 class MyTasksPage {
   constructor () {
-    this.topBar = Selector('#top_bar_inner')
     this.calendarTitle = Selector('.view_header__content')
     this.addTaskIcon = Selector('.icon_add')
     this.taskNameInput = Selector('.public-DraftEditor-content')
@@ -21,12 +20,16 @@ class MyTasksPage {
     }
   }
 
-  async createNewTask (taskName) {
-    await t
-      .click(this.addTaskIcon)
-      .typeText(this.taskNameInput, taskName)
-      .click(this.addTaskButton)
-      .click(this.cancelButton)
+  async createNewTask (taskName, taskNumber) {
+    for (let i = 0; i <= taskNumber; i++) {
+      await t
+        .click(this.addTaskIcon)
+        .typeText(this.taskNameInput, taskName)
+        .click(this.addTaskButton)
+        .click(this.cancelButton)
+      const newTaskName = await this.getLastTaskName()
+      await t.expect(newTaskName).contains(taskName)
+    }
   }
 
   async getTasksCount () {
