@@ -40,8 +40,8 @@ jobs:
       - name: Use newman
         uses: matt-ball/newman-action@master
         with:
-          collection: Todoist.json
-          environment: QA.json
+          collection: "./Backend/collection/Todoist.json"
+          environment: "./Backend/envVariables/QA.json"
   e2eTests:
     if: always()
     needs: newman
