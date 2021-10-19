@@ -19,7 +19,7 @@ test('Validate new task is created', async t => {
   await MyTasksPage.createNewTask(TASK_NAME, TASKS_NUMBER_MIN)
   const tasksCountAfterCreate = await MyTasksPage.getTasksCount()
 
-  await t.expect(tasksCountAfterCreate - tasksCountBeforeCreate).eql(1)
+  await t.expect(tasksCountAfterCreate - tasksCountBeforeCreate).eql(TASKS_NUMBER_MIN)
 })
 
 test('Validate tasks are created correctly', async t => {

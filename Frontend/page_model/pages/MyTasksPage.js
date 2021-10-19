@@ -21,7 +21,7 @@ class MyTasksPage {
   }
 
   async createNewTask (taskName, taskNumber) {
-    for (let i = 0; i <= taskNumber; i++) {
+    for (let i = 0; i < taskNumber; i++) {
       await t
         .click(this.addTaskIcon)
         .typeText(this.taskNameInput, taskName)
